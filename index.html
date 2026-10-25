@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biswas Inquiry Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="flex width text">
+            <h2>Biswas IT Firm</h2>
+            <p>Project Inquiry Tracker</p>
+        </div>
+    </header>
+
+    <!-- main section -->
+    <main>
+        <section>
+            <div class="width flex top">
+                <div>
+                    <h2>Project Inquiries</h2>
+                    <p class="margin">Manage and track your client project requests </p>
+                </div>
+                <button type="button" class="btn text" id="openModalBtn"><span>+</span> Add Inquiry</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- count and table section -->
+    <section>
+        <div class="width top">
+            <div class="card">
+                <article>
+                    <div>
+                        <h3>Total</h3>
+                        <p id="totalCount" class="margin"></p>
+                    </div>
+                </article>
+                <article>
+                    <div>
+                        <h3>Pending</h3>
+                        <p id="pendingCount" class="margin"></p>
+                    </div>
+                </article>
+                <article>
+                    <div>
+                        <h3>In Progress</h3>
+                        <p id="progressCount" class="margin"></p>
+                    </div>
+                </article>
+                <article>
+                    <div>
+                        <h3>Completed</h3>
+                        <p id="completedCount" class="margin"></p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="top width">
+            <h2>All Inquiries</h2>
+            <div class="margin flex">
+                <div>
+                    <input class="search-box" type="search" name="statusFilter" id="searchInput">
+                    <button class="search-btn">Search</button>
+                </div>
+                <div>
+                    <label for="sortSelect">Sort</label>
+                    <select name="sortSelect" id="">
+                        <option disabled value="select">Select</option>
+                        <option value="Newest">Newest</option>
+                        <option value="Oldest">Oldest</option>
+                        <option value="High-Low">High-Low</option>
+                        <option value="Low-High">Low-High</option>
+                    </select>
+
+                    <label for="statusFilter">Filter</label>
+                    <select name="statusFilter" id="">
+                        <option disabled value="select">Select</option>
+                        <option value="Completed">Completed</option>
+                        <option value="In-Progress">In Progress</option>
+                        <option value="Pending">Pending</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- table -->
+            <div class="table-responsive">
+                <table class="top table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Client</th>
+                            <th>Service</th>
+                            <th>Status</th>
+                            <th>Budget</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="inquiryTableBody">
+                        
+                    </tbody>
+                </table>
+
+                <div id="emptyState" class="top empty-state">
+                    <h3>No inquiries found</h3>
+                    <p>Add your first inquiry to get started.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- modal -->
+    <section id="inquiryModal" class="modal-overlay">
+        <div class="width modal">
+            <div class="flex">
+                <h2 id="modalTitle">Add Inquiry</h2>
+                <button type="button" id="closeModalBtn" class="close-btn left">
+                    &times;
+                </button>
+            </div>
+
+            <form action="" id="inquiryForm" class="margin">
+                <div class="margin">
+                    <label for="name">Client Name*</label>
+                    <input type="text" name="name" id="name" class="search-box" required>
+                </div>
+                <div class="margin">
+                    <label for="service">Service*</label>
+                    <select name="service" id="service" class="search-box">
+                        <option value="E-commerce Website">E-commerce Website</option>
+                        <option value="UI/UX Design">UI/UX Design</option>
+                        <option value="SEO Services">SEO Services</option>
+                        <option value="Facebook Ads">Facebook Ads</option>
+                    </select>
+                </div>
+                <div class="margin">
+                    <label for="">Budget*</label>
+                    <input type="number" name="budget" id="budget" class="search-box" min="1" required>
+                </div>
+                <div class="margin">
+                    <label for="status">Status</label>
+                    <select name="status" id="status" class="search-box">
+                        <option value="Pending">Pending</option>
+                        <option value="Completed">Completed</option>
+                        <option value="In-Progress">In Progress</option>
+                    </select>
+                </div>
+
+                <div class="margin">
+                    <button type="submit" class="btn text" id="submitBtn">
+                        Add Inquiry
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

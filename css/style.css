@@ -1,0 +1,161 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+    background: rgb(0, 98, 255);
+    padding: 28px 0px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text {
+    color: white;
+}
+
+.btn {
+    padding: 10px 10px;
+    font-size: medium;
+    font-weight: 500;
+    background: rgb(0, 98, 255);
+    border: 0px solid;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.width {
+    max-width: 1280px;
+    margin: auto;
+}
+
+.top {
+    margin-top: 50px;
+}
+
+.margin {
+    margin-top: 10px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card div {
+    border: 1px solid rgb(228, 217, 217);
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 2px 2px 4px 4px rgb(230, 239, 255);
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 12px 16px;
+    border: 2px solid
+}
+
+.search-box {
+    padding: 4px;
+}
+
+.search-btn {
+    padding: 4px;
+    cursor: pointer;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    background: white;
+    padding: 30px;
+
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.left {
+    margin-left: 40px;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* Modal Open */
+.modal-overlay.active {
+    display: flex;
+}
+
+
+
+
+@media (max-width: 992px) {
+    .card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .width {
+        width: 94%;
+    }
+}
+
+@media (max-width: 640px) {
+    .card {
+        grid-template-columns: 1fr;
+    }
+
+    .top {
+        margin-top: 25px;
+    }
+
+    .flex {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .table {
+        min-width: 650px;
+    }
+
+    .modal {
+        padding: 20px;
+    }
+}
